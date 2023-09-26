@@ -11,14 +11,19 @@
 
 void print_chessboard(char (*a)[8])
 {
-	for (int i = 0; i <= 7; i++)
+	int j = 0;
+
+	for (int i = 0; i < 64; i++)
 	{
-		for (int j = 0; j <= 7; j++)
+		if (i % 8 == 0 && i != 0)
 		{
-			printf("%c", a[i][j]);
+			j = i;
+			_putchar('\n');
 		}
 
-		printf("\n");
+		_putchar(a[i / 8][i - j]);
 	}
+
+	_putchar('\n');
 }
 
